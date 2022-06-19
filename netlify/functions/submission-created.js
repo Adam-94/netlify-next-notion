@@ -1,5 +1,6 @@
 const { Client } = require("@notionhq/client");
 exports.handler = async function (event) {
+  event.preventDefault();
   const form = JSON.parse(event.body).payload.data;
   const notion = new Client({ auth: process.env.NOTION_TOKEN });
   try {
